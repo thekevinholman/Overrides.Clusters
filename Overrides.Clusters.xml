@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>Overrides.Clusters</ID>
+      <Version>1.0.0.0</Version>
+    </Identity>
+    <Name>Overrides - Clusters</Name>
+    <References>
+      <Reference Alias="MWCMM">
+        <ID>Microsoft.Windows.Cluster.Management.Monitoring</ID>
+        <Version>10.0.0.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="MWCML">
+        <ID>Microsoft.Windows.Cluster.Management.Library</ID>
+        <Version>10.0.0.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SC">
+        <ID>Microsoft.SystemCenter.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Monitoring>
+    <Overrides>
+      <MonitorPropertyOverride ID="OverrideForMonitor.Microsoft.Windows.Cluster.HostedGroup.StateMonitoring.AlertOnState" Context="MWCML!Microsoft.Windows.Cluster.HostedGroup" Enforced="false" Monitor="MWCMM!Microsoft.Windows.Cluster.HostedGroup.StateMonitoring" Property="AlertOnState">
+        <Value>Warning</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="OverrideForMonitor.Microsoft.Windows.Cluster.HostedGroup.StateMonitoring.AlertPriority" Context="MWCML!Microsoft.Windows.Cluster.HostedGroup" Enforced="false" Monitor="MWCMM!Microsoft.Windows.Cluster.HostedGroup.StateMonitoring" Property="AlertPriority">
+        <Value>Normal</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="OverrideForMonitor.Microsoft.Windows.Cluster.HostedGroup.StateMonitoring.AutoResolve" Context="MWCML!Microsoft.Windows.Cluster.HostedGroup" Enforced="false" Monitor="MWCMM!Microsoft.Windows.Cluster.HostedGroup.StateMonitoring" Property="AutoResolve">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="OverrideForMonitor.Microsoft.Windows.Cluster.HostedGroup.StateMonitoring.GenerateAlert" Context="MWCML!Microsoft.Windows.Cluster.HostedGroup" Enforced="false" Monitor="MWCMM!Microsoft.Windows.Cluster.HostedGroup.StateMonitoring" Property="GenerateAlert">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="OverrideForMonitor.Microsoft.Windows.Cluster.HostedGroup.StateMonitoring.AlertMessage" Context="MWCML!Microsoft.Windows.Cluster.HostedGroup" Enforced="false" Monitor="MWCMM!Microsoft.Windows.Cluster.HostedGroup.StateMonitoring" Property="AlertMessage">
+        <Value>3DDCF88A-435E-40A2-BC42-50820505875D</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="OverrideForMonitor.Microsoft.Windows.Cluster.HostedGroup.StateMonitoring.AlertParameter1" Context="MWCML!Microsoft.Windows.Cluster.HostedGroup" Enforced="false" Monitor="MWCMM!Microsoft.Windows.Cluster.HostedGroup.StateMonitoring" Property="AlertParameter1">
+        <Value>$Data/Context/Property[@Name='Name']$</Value>
+      </MonitorPropertyOverride>	  
+    </Overrides>
+  </Monitoring>
+  <Presentation>
+    <StringResources>
+      <StringResource ID="Overrides.Clusters.Resource.Group.State.Monitor.AlertMessage" />
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Overrides.Clusters">
+          <Name>Overrides - Clusters</Name>
+        </DisplayString>
+        <DisplayString ElementID="Overrides.Clusters.Resource.Group.State.Monitor.AlertMessage">
+          <Name>Cluster resource group offline or partially online</Name>
+          <Description>Based on the severity of this alert, the resource group in the cluster is offline (Critical) or partially online (Warning).
+Cluster Resource Group Name: {0}
+</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>
